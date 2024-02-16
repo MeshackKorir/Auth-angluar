@@ -8,7 +8,6 @@ import { CommonModule } from '@angular/common';
   selector: 'app-login',
   standalone: true,
   imports: [NavbarComponent,  FormsModule, RouterLink, CommonModule],
-  // FormsModule, RouterLink, CommonModule
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })

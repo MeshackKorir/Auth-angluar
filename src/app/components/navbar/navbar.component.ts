@@ -9,12 +9,17 @@ import { Router, RouterLink } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
+
 export class NavbarComponent {
 
   constructor(private router: Router) { }
-  
+
   isLoggedIn = false
   navigatetoLogin() {
     this.router.navigate(['/login']);
+  }
+
+  navigatetosignup() {
+    this.router.navigate(['/Register']);
   }
 }
