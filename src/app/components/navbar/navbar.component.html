@@ -7,9 +7,11 @@
             <a href="#">Home</a>
         </li>
 
-        <li routerLink="/register" *ngIf="!isLoggedIn">Register</li>
-        <li (click)="navigatetoLogin()" *ngIf="!isLoggedIn">Login</li>
-       
+        <li  *ngIf="!isLoggedIn" routerLink="/Register">Register</li>
+
+        <li *ngIf="!isLoggedIn">
+            <a routerLink="/Login" (click)="navigatetoLogin()">Login</a>
+          </li>       
     </ul>
     
 </section>
