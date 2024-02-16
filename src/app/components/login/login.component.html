@@ -2,19 +2,22 @@
 
 <div class="parent-wrapper">
   <div class="wrapper">
-    <form class="login-form">
-      <h2>Login</h2>
+    <form [formGroup]="loginforms" (ngSubmit)="loginUser()" class="login-form">
+        <h2>Login</h2>
       <div class="input-field">
-        <input data-cy="email" type="text" name="email" required>
+        <input formControlName="email" type="text" name="email" required>
         <label>Enter your email</label>
       </div>
+
       <div class="input-field">
-        <input data-cy="password" type="password" name="password" required>
+        <input formControlName="password"  type="text" name="password" required>
         <label>Enter your password</label>
+        <div *ngIf="loginforms.get('password')?.invalid && loginforms.get('password')?.touched" class="text-sm text-red-500 mt-[3px]">Password is required</div>
+        <div *ngIf="loginforms.get('password')?.invalid && loginforms.get('password')?.touched && !loginforms.get('password')?.dirty" class="text-sm text-red-500 mt-[3px]">Must have letters </div>
       </div>
       <div class="forget">
         <label for="remember">
-          <input type="checkbox" id="remember">
+          <input type="checkbox" id="remember" >
           <p>Remember me</p>
         </label>
         <a href="#">Forgot password?</a>
