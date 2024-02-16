@@ -1,0 +1,15 @@
+
+
+<section class="nav-bar">
+    <div class="logo">Auth Page</div>
+    <ul class="menu">
+        <li>
+            <a href="#">Home</a>
+        </li>
+
+        <li routerLink="/register" *ngIf="!isLoggedIn">Register</li>
+        <li (click)="navigatetoLogin()" *ngIf="!isLoggedIn">Login</li>
+       
+    </ul>
+    
+</section>
