@@ -2,21 +2,20 @@
 
 <div class="parent-wrapper">
   <div class="wrapper">
-    <form class="login-form">
+    <form class="login-form" (ngSubmit)="registerUser()">
       <h2>Signup</h2>
       <div class="input-field">
-        <input data-cy="email" type="text" name="email" required>
+        <input data-cy="email" type="text" name="email" required [(ngModel)]="email">
         <label>Enter your email</label>
       </div>
       <div class="input-field">
-        <input data-cy="password" type="password" name="password" required>
+        <input data-cy="password" type="password" name="password" required [(ngModel)]="password">
         <label>Enter your password</label>
       </div>
       <button type="submit">Register</button>
       <div class="register">
-        <p>Already have an account? <a href="/login">Login</a></p>
+        <p>Already have an account? <a routerLink="/login">Login</a></p>
       </div>
     </form>
   </div>
 </div>
-

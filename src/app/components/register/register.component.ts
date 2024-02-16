@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -13,5 +13,12 @@ import { FormsModule } from '@angular/forms';
 })
 export class RegisterComponent {
 
-
+  email: string = '';
+  password: string = '';
+  
+  constructor(private router: Router) { }
+  registerUser() {
+   
+    this.router.navigate(['/login']);
+}
 }
